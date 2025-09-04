@@ -9,7 +9,7 @@
 
 VARIABLE [a-z]
 INTEGER  [0-9]+
-FLOAT    [0-9]+\.[0-9]+
+REAL    [0-9]+\.[0-9]+
 
 %%
 
@@ -20,7 +20,7 @@ FLOAT    [0-9]+\.[0-9]+
 	return VARIABLE;
 }
 
-{FLOAT} {
+{REAL} {
 	yylval.real_val = (double)(atof(yytext));
 	return REAL;
 }
@@ -31,6 +31,10 @@ FLOAT    [0-9]+\.[0-9]+
 }
 
 [-+*/=()\n] {
+	return *yytext;
+}
+
+; {
 	return *yytext;
 }
 

@@ -24,6 +24,7 @@
 
 program:
 	program statement '\n';
+	| program statement ';';
 	| /* ε */
 	;
 

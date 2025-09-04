@@ -1,3 +1,5 @@
+.SUFFIXES:
+
 CC = gcc
 CFLAGS = -Wall -g
 TARGET = calculadora
